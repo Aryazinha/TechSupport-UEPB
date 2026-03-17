@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefHeight="600.0" prefWidth="650.0" spacing="15.0" styleClass="modal-root" stylesheets="@style.css" accessibleHelp="" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.uepb.techsupport.controller.FilaTriagemController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+
+    <children>
+        <Label styleClass="titulo-pagina" text="Fila de Triagem Inteligente" />
+        <Label styleClass="subtitulo-pagina" text="Selecione um chamado para reclassificar sua prioridade na fila." />
+
+        <ListView fx:id="listViewChamados" prefHeight="350.0" styleClass="modal-list-view" VBox.vgrow="ALWAYS" />
+
+        <Separator />
+
+        <HBox alignment="CENTER_LEFT" spacing="15.0">
+            <children>
+                <ComboBox fx:id="cbNovaPrioridade" prefWidth="170.0" promptText="Nova Prioridade" styleClass="combo-box-dark" />
+                <Button mnemonicParsing="false" onAction="#handleAtualizarPrioridade" styleClass="btn-principal" text="Atualizar Prioridade" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Button mnemonicParsing="false" onAction="#handleVoltar" styleClass="btn-secondary" text="Voltar ao Dashboard" />
+            </children>
+        </HBox>
+    </children>
+</VBox>

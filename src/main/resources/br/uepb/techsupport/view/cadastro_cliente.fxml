@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" prefHeight="650.0" prefWidth="550.0" spacing="15.0" styleClass="root" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.uepb.techsupport.controller.ClienteCadastroController">
+
+    <padding>
+        <Insets bottom="20.0" left="40.0" right="40.0" top="15.0" />
+    </padding>
+
+    <VBox maxWidth="450.0" spacing="15.0">
+        <VBox alignment="CENTER" spacing="2.0">
+            <Label styleClass="auth-titulo" text="Criar Conta" />
+            <Label styleClass="auth-subtitulo" text="TECHSUPPORT UEPB" />
+        </VBox>
+
+        <VBox spacing="15.0" styleClass="card-formulario">
+
+            <VBox spacing="5.0">
+                <Label styleClass="form-label" text="NOME COMPLETO" />
+                <TextField fx:id="txtNome" prefHeight="38.0" promptText="Digite seu nome" styleClass="input-auth" />
+            </VBox>
+
+            <VBox spacing="5.0">
+                <Label styleClass="form-label" text="CPF" />
+                <TextField fx:id="txtCpf" prefHeight="38.0" promptText="Apenas números" styleClass="input-auth" />
+            </VBox>
+
+            <VBox spacing="5.0">
+                <Label styleClass="form-label" text="TELEFONE" />
+                <TextField fx:id="txtTelefone" prefHeight="38.0" promptText="Ex: 83 99999-9999" styleClass="input-auth" />
+            </VBox>
+
+            <VBox spacing="5.0">
+                <Label styleClass="form-label" text="E-MAIL INSTITUCIONAL" />
+                <TextField fx:id="txtEmail" prefHeight="38.0" promptText="exemplo@uepb.edu.br" styleClass="input-auth" />
+            </VBox>
+
+            <VBox spacing="5.0">
+                <Label styleClass="form-label" text="SENHA" />
+                <PasswordField fx:id="txtSenha" prefHeight="38.0" promptText="••••••••" styleClass="input-auth" />
+            </VBox>
+
+            <Button maxWidth="Infinity" onAction="#handleCadastrar" prefHeight="42.0" styleClass="btn-principal" text="Cadastrar" />
+        </VBox>
+
+        <HBox alignment="CENTER" spacing="5.0" styleClass="auth-footer">
+            <Label styleClass="texto-secundario" text="Já possui uma conta?" />
+            <Hyperlink onAction="#handleVoltarLogin" styleClass="link-auth" text="Fazer login." />
+        </HBox>
+    </VBox>
+</VBox>

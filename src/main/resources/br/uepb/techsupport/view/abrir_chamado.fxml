@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefHeight="650.0" prefWidth="1000.0" styleClass="root" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.uepb.techsupport.controller.AbrirChamadoController">
+    <padding>
+        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+    </padding>
+
+    <children>
+        <Label styleClass="titulo-pagina" text="Abrir Novo Chamado">
+            <VBox.margin>
+                <Insets bottom="20.0" />
+            </VBox.margin>
+        </Label>
+
+        <VBox spacing="25.0" VBox.vgrow="ALWAYS" style="-fx-padding: 35;">
+            <children>
+
+                <HBox spacing="20.0" VBox.vgrow="NEVER">
+                    <children>
+                        <VBox spacing="8.0" HBox.hgrow="ALWAYS" prefWidth="350.0">
+                            <Label styleClass="subtitulo-pagina" text="Categoria do Problema" />
+                            <ComboBox fx:id="cbCategoria" maxWidth="Infinity" prefHeight="45.0" styleClass="combo-box-dark" />
+                        </VBox>
+
+                        <VBox spacing="8.0" HBox.hgrow="ALWAYS" prefWidth="300.0">
+                            <Label styleClass="subtitulo-pagina" text="Localização / Setor" />
+                            <TextField fx:id="txtLocalizacao" promptText="Ex: Lab de Redes, Bloco C..." prefHeight="45.0" styleClass="text-field-dark" />
+                        </VBox>
+
+                        <VBox spacing="8.0" HBox.hgrow="ALWAYS" prefWidth="180.0" minWidth="150.0">
+                            <Label styleClass="subtitulo-pagina" text="Prioridade" />
+                            <ComboBox fx:id="cbPrioridade" maxWidth="Infinity" prefHeight="45.0" styleClass="combo-box-dark" />
+                        </VBox>
+                    </children>
+                </HBox>
+
+                <VBox spacing="8.0" VBox.vgrow="ALWAYS">
+                    <children>
+                        <Label styleClass="subtitulo-pagina" text="Descrição Detalhada do Problema" />
+                        <TextArea fx:id="txtDescricao" promptText="Descreva o que aconteceu, mensagens de erro, etc..." styleClass="text-area-dark" wrapText="true" VBox.vgrow="ALWAYS" />
+                    </children>
+                </VBox>
+
+                <HBox alignment="CENTER_RIGHT" spacing="15.0">
+                    <VBox.margin>
+                        <Insets top="10.0" />
+                    </VBox.margin>
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#handleSair" prefHeight="45.0" prefWidth="140.0" styleClass="btn-secondary" text="Cancelar" />
+                        <Button mnemonicParsing="false" onAction="#handleSalvar" prefHeight="45.0" prefWidth="200.0" styleClass="btn-principal" text="Enviar Chamado" />
+                    </children>
+                </HBox>
+
+            </children>
+        </VBox>
+    </children>
+</VBox>

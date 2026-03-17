@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" prefHeight="540.0" prefWidth="550.0" spacing="15.0" styleClass="root" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.uepb.techsupport.controller.TecnicoController">
+
+    <padding>
+        <Insets bottom="15.0" left="40.0" right="40.0" top="10.0" />
+    </padding>
+
+    <VBox maxWidth="500.0" spacing="30.0">
+
+        <HBox alignment="CENTER_LEFT">
+            <VBox spacing="2.0">
+                <Label styleClass="titulo-pagina" text="Cadastrar Novo Técnico" />
+                <Label styleClass="subtitulo-pagina" text="REGISTRO DE EQUIPE" />
+            </VBox>
+
+            <Region HBox.hgrow="ALWAYS" />
+
+            <Button onAction="#handleVoltar" prefHeight="40.0" prefWidth="90.0" styleClass="btn-secondary" text="Voltar" />
+        </HBox>
+
+        <VBox spacing="18.0" styleClass="card-formulario">
+
+            <GridPane hgap="15.0" vgap="15.0">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" percentWidth="50.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" percentWidth="50.0" />
+                </columnConstraints>
+                <children>
+                    <VBox spacing="8.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                        <Label styleClass="form-label" text="NOME COMPLETO" />
+                        <TextField fx:id="txtNome" prefHeight="40.0" promptText="Ex: João Silva" styleClass="text-field" />
+                    </VBox>
+
+                    <VBox spacing="8.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                        <Label styleClass="form-label" text="CPF" />
+                        <TextField fx:id="txtCpf" prefHeight="40.0" promptText="000.000.000-00" styleClass="text-field" />
+                    </VBox>
+
+                    <VBox spacing="8.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                        <Label styleClass="form-label" text="E-MAIL INSTITUCIONAL" />
+                        <TextField fx:id="txtEmail" prefHeight="40.0" promptText="nome@uepb.edu.br" styleClass="text-field" />
+                    </VBox>
+
+                    <VBox spacing="8.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <Label styleClass="form-label" text="NÍVEL DE ACESSO" />
+                        <ComboBox fx:id="cbNivel" maxWidth="Infinity" prefHeight="40.0" promptText="Selecione..." styleClass="combo-box-dark" />
+                    </VBox>
+
+                    <VBox spacing="8.0" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                        <Label styleClass="form-label" text="SENHA PROVISÓRIA" />
+                        <PasswordField fx:id="txtSenha" prefHeight="40.0" styleClass="text-field" />
+                    </VBox>
+                </children>
+            </GridPane>
+
+            <HBox alignment="CENTER_LEFT" spacing="15.0">
+                <children>
+                    <Button fx:id="btnSalvar" onAction="#handleSalvar" prefHeight="42.0" prefWidth="150.0" styleClass="btn-principal" text="Salvar Técnico" />
+                    <Button onAction="#handleCancelar" prefHeight="42.0" prefWidth="110.0" styleClass="btn-secondary" text="Cancelar" />
+                </children>
+            </HBox>
+        </VBox>
+    </VBox>
+</VBox>

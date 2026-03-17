@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefWidth="450.0" spacing="15.0" styleClass="modal-root" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.uepb.techsupport.controller.ConcluirChamadoController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+
+    <children>
+        <Label fx:id="lblTitulo" styleClass="modal-title-large" text="Finalizar Chamado #..." />
+
+        <Label styleClass="modal-info" text="Descreva o que foi feito para resolver o problema:" />
+        <TextArea fx:id="txtSolucao" prefRowCount="5" wrapText="true" promptText="Ex: Realizada a troca do cabo de rede e configurado IP fixo..." styleClass="text-area-dark"/>
+
+        <Label styleClass="modal-info" text="Valor do Serviço Cobrado (R$):" />
+        <TextField fx:id="txtPreco" promptText="0.00" styleClass="text-field" />
+
+        <HBox alignment="CENTER_RIGHT" spacing="15.0">
+            <VBox.margin>
+                <Insets top="10.0" />
+            </VBox.margin>
+            <children>
+                <Button mnemonicParsing="false" onAction="#handleCancelar" styleClass="btn-secondary" text="Cancelar" />
+                <Button mnemonicParsing="false" onAction="#handleConfirmar" styleClass="btn-success" text="Confirmar Encerramento" />
+            </children>
+        </HBox>
+    </children>
+</VBox>
